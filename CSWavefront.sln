@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSWavefront", "CSWavefront\CSWavefront.csproj", "{2BC2EB63-0300-465B-8E32-0E6905CB547E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSWavefrontTest", "CSWavefrontTest\CSWavefrontTest.csproj", "{9A47448E-BA70-4B16-849C-424BA35D8043}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BC2EB63-0300-465B-8E32-0E6905CB547E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC2EB63-0300-465B-8E32-0E6905CB547E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC2EB63-0300-465B-8E32-0E6905CB547E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC2EB63-0300-465B-8E32-0E6905CB547E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A47448E-BA70-4B16-849C-424BA35D8043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A47448E-BA70-4B16-849C-424BA35D8043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A47448E-BA70-4B16-849C-424BA35D8043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A47448E-BA70-4B16-849C-424BA35D8043}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {078316E4-9999-478E-947C-DA0B6DD91DD6}
+	EndGlobalSection
+EndGlobal
