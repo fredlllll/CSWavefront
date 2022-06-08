@@ -6,7 +6,7 @@ namespace CSWavefrontTest
 {
     class Program
     {
-        static void Main(string[] args)
+        static void TestObj()
         {
             ObjFile obj = new ObjFile();
 
@@ -26,17 +26,23 @@ namespace CSWavefrontTest
             poly.vertices.Add(new PolygonVertex() { vertex = 1 });
             poly.vertices.Add(new PolygonVertex() { vertex = 2 });
             poly.vertices.Add(new PolygonVertex() { vertex = 3 });
-            a.polygons["red"] = new System.Collections.Generic.List<Polygon>();
             a.polygons["red"].Add(poly);
 
             poly = new Polygon();
             poly.vertices.Add(new PolygonVertex() { vertex = 2 });
             poly.vertices.Add(new PolygonVertex() { vertex = 4 });
             poly.vertices.Add(new PolygonVertex() { vertex = 3 });
-            b.polygons["blue"] = new System.Collections.Generic.List<Polygon>();
             b.polygons["blue"].Add(poly);
 
-            Saver.Save(obj, "test.obj");
+            ObjSaver.Save(obj, "test.obj");
+
+            ObjFile obj2 = ObjLoader.Load("testload.obj");
+            Console.WriteLine("");
+        }
+
+        static void Main(string[] args)
+        {
+            TestObj();
         }
     }
 }

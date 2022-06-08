@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSWavefront.Raw
 {
-    public static class Saver
+    public static class ObjSaver
     {
         public static void Save(ObjFile obj, string filePath)
         {
@@ -108,7 +108,10 @@ namespace CSWavefront.Raw
 
                     foreach (var kv in o.polygons)
                     {
-                        w.WriteLine("usemtl " + kv.Key);
+                        if (kv.Key.Length > 0)
+                        {
+                            w.WriteLine("usemtl " + kv.Key);
+                        }
                         for (int j = 0; j < kv.Value.Count; ++j)
                         {
                             var p = kv.Value[j];
@@ -137,11 +140,6 @@ namespace CSWavefront.Raw
                     }
                 }
             }
-        }
-
-        public static void Save(MtlFile mtl, string filePath)
-        {
-
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Text;
 
 namespace CSWavefront.Raw
 {
-    public static class Loader
+    public static class MtlSaver
     {
-        public static ObjFile Load(string filePath)
+        public static void Save(MtlFile mtl, string filePath)
         {
-            return null;
+
         }
     }
 }
