@@ -12,8 +12,8 @@ namespace CSWavefrontTest
 
             ObjObject a = new ObjObject("a");
             ObjObject b = new ObjObject("b");
-            obj.objects.Add(a);
-            obj.objects.Add(b);
+            obj.objects[a.name] = a;
+            obj.objects[b.name] = b;
 
             var r = new Random();
 
@@ -36,7 +36,7 @@ namespace CSWavefrontTest
 
             ObjSaver.Save(obj, "test.obj");
 
-            ObjFile obj2 = ObjLoader.Load("testload.obj");
+            //ObjFile obj2 = ObjLoader.Load("testload.obj");
             Console.WriteLine("");
         }
 

@@ -14,7 +14,7 @@ namespace CSWavefront.Raw
         }
 
         public string name;
-        public readonly List<string> groupNames = new List<string>();
+        public readonly HashSet<string> groupNames = new HashSet<string>();
         public readonly AutoDictionary<string, List<Polygon>> polygons = new AutoDictionary<string, List<Polygon>>(CreatePolygonList);
 
         public ObjObject([DisallowNull] string name)

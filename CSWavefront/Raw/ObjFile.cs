@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSWavefront.Util;
+using System;
 using System.Collections.Generic;
 using System.Numerics;
 
@@ -11,6 +12,6 @@ namespace CSWavefront.Raw
         public readonly List<Vector3> uvs = new List<Vector3>();
         public readonly List<Vector3> normals = new List<Vector3>();
 
-        public readonly List<ObjObject> objects = new List<ObjObject>();
+        public readonly AutoDictionary<string, ObjObject> objects = new AutoDictionary<string, ObjObject>((x) => { return new ObjObject(x); });
     }
 }

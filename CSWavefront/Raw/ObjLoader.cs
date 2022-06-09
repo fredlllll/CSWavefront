@@ -14,7 +14,7 @@ namespace CSWavefront.Raw
             if (obj == null)
             {
                 obj = new ObjObject("object");
-                file.objects.Add(obj);
+                file.objects[obj.name] = obj;
             }
             return obj;
         }
@@ -85,7 +85,7 @@ namespace CSWavefront.Raw
                         case "v":
                             if (tokens.Length == 4)
                             {
-                                obj.vertices.Add(new Vector4(float.Parse(tokens[1],format), float.Parse(tokens[2], format), float.Parse(tokens[3], format), 1));
+                                obj.vertices.Add(new Vector4(float.Parse(tokens[1], format), float.Parse(tokens[2], format), float.Parse(tokens[3], format), 1));
                             }
                             else if (tokens.Length == 5)
                             {
@@ -107,10 +107,13 @@ namespace CSWavefront.Raw
                             break;
                         case "o":
                             currentObject = new ObjObject(tokens[1]);
-                            obj.objects.Add(currentObject);
+                            obj.objects[currentObject.name] = currentObject;
                             break;
                         case "g":
-                            NullCheckObj(obj, ref currentObject).groupNames.AddRange(tokens.Skip(1));
+                            foreach (var g in tokens.Skip(1))
+                            {
+                                NullCheckObj(obj, ref currentObject).groupNames.Add(g);
+                            }
                             break;
                         case "f":
                             var p = GetPolygon(tokens);

@@ -92,16 +92,16 @@ namespace CSWavefront.Raw
 
                 //objects
                 w.WriteLine("# objects");
-                for (int i = 0; i < obj.objects.Count; ++i)
+                foreach (var kvo in obj.objects)
                 {
-                    var o = obj.objects[i];
+                    var o = kvo.Value;
                     w.WriteLine("o " + o.name);
                     if (o.groupNames.Count > 0)
                     {
-                        w.Write("g ");
+                        w.Write("g");
                         foreach (var group in o.groupNames)
                         {
-                            w.Write(group);
+                            w.Write(" " + group);
                         }
                         w.WriteLine();
                     }
@@ -133,7 +133,7 @@ namespace CSWavefront.Raw
                             for (int k = 0; k < p.vertices.Count; ++k)
                             {
                                 var v = p.vertices[k];
-                                w.Write(string.Format(fmt, v.vertex, v.uv, v.normal));
+                                w.Write(string.Format(fmt, v.vertex + 1, v.uv + 1, v.normal + 1));
                             }
                             w.WriteLine();
                         }
