@@ -40,6 +40,15 @@ namespace CSWavefrontTest
             Console.WriteLine("");
         }
 
+        static void MtlTest()
+        {
+            MtlFile mtl = new MtlFile();
+
+            MtlSaver.Save(mtl, "test.mtl");
+
+            MtlFile mtl2 = MtlLoader.Load("test.mtl");
+        }
+
         static void Main(string[] args)
         {
             TestObj();
