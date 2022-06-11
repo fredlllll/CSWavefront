@@ -28,13 +28,13 @@ namespace CSWavefront.Raw
                 var parts = tok.Split('/');
 
                 var vert = new PolygonVertex();
-                vert.vertex = int.Parse(parts[0]);
+                vert.vertex = int.Parse(parts[0])-1;
                 if (parts.Length > 1)
                 {
                     if (parts[1].Length > 0)
                     {
                         p.hasUvs = true;
-                        vert.uv = int.Parse(parts[1]);
+                        vert.uv = int.Parse(parts[1])-1;
                     }
                     else
                     {
@@ -44,7 +44,7 @@ namespace CSWavefront.Raw
                     if (parts.Length > 2)
                     {
                         p.hasNormals = true;
-                        vert.normal = int.Parse(parts[2]);
+                        vert.normal = int.Parse(parts[2])-1;
                     }
                 }
                 else
